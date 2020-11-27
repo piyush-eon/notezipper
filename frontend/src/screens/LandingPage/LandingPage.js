@@ -22,7 +22,7 @@ function LandingPage() {
                   Login
                 </Button>
               </Link>
-              <Link to="/signup">
+              <Link to="/register">
                 <Button
                   variant="outline-primary"
                   size="lg"
