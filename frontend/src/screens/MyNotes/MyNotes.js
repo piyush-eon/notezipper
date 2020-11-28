@@ -10,7 +10,7 @@ import { listNotes } from "../../actions/notesActions";
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
 
-function MyNotes() {
+function MyNotes({ history }) {
   const [noteModal, setNoteModal] = useState("");
   const [modalShow, setModalShow] = useState(false);
 
@@ -19,9 +19,15 @@ function MyNotes() {
   const noteList = useSelector((state) => state.noteList);
   const { loading, error, notes } = noteList;
 
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
   useEffect(() => {
     dispatch(listNotes());
-  }, [dispatch]);
+    if (!userInfo) {
+      history.push("/");
+    }
+  }, [dispatch, history, userInfo]);
 
   const ModelShow = (note) => {
     setModalShow(true);
@@ -29,8 +35,13 @@ function MyNotes() {
   };
 
   return (
-    <MainScreen title="Welcome Back Piyush..">
+    <MainScreen title={`Welcome Back ${userInfo && userInfo.name}..`}>
       {console.log(notes)}
+      <Link to="/createnote">
+        <Button style={{ marginLeft: 10, marginBottom: 6 }} size="lg">
+          Create new Note
+        </Button>
+      </Link>
       {loading && <Loading />}
       {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
       {notes &&
