@@ -3,6 +3,7 @@ import { Button, Modal } from "react-bootstrap";
 function NoteModal({ show, noteModal, onHide }) {
   return (
     <Modal
+      onHide={onHide}
       show={show}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"

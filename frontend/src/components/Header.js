@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Button,
   Container,
   Form,
   FormControl,
@@ -12,7 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {} from "react-router-dom";
 import { logout } from "../actions/userActions";
 
-function Header() {
+function Header({ setSearch }) {
   const dispatch = useDispatch();
 
   const userLogin = useSelector((state) => state.userLogin);
@@ -30,14 +29,17 @@ function Header() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="m-auto">
-            <Form inline>
-              <FormControl
-                type="text"
-                placeholder="Search"
-                className="mr-sm-2"
-              />
-              <Button variant="secondary">Search</Button>
-            </Form>
+            {userInfo && (
+              <Form inline>
+                <FormControl
+                  type="text"
+                  placeholder="Search"
+                  className="mr-sm-2"
+                  onChange={(e) => setSearch(e.target.value)}
+                />
+                {/* <Button variant="secondary">Search</Button> */}
+              </Form>
+            )}
           </Nav>
           <Nav>
             {userInfo ? (
