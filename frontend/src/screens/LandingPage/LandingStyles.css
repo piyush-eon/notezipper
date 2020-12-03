@@ -33,8 +33,17 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+.landingbutton {
+  width: 200px;
+  height: 55px;
+}
+
+@media only screen and (max-width: 768px) {
   .title {
     font-size: 60px;
+  }
+  .landingbutton {
+    width: 150px;
+    height: 50px;
   }
 }

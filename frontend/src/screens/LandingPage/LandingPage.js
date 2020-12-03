@@ -28,7 +28,7 @@ function LandingPage({ history }) {
             </div>
             <div className="buttonContainer">
               <Link to="/login">
-                <Button size="lg" style={{ width: 200, height: 55 }}>
+                <Button size="lg" className="landingbutton">
                   Login
                 </Button>
               </Link>
@@ -36,7 +36,7 @@ function LandingPage({ history }) {
                 <Button
                   variant="outline-primary"
                   size="lg"
-                  style={{ width: 200, height: 55 }}
+                  className="landingbutton"
                 >
                   Signup
                 </Button>
