@@ -13,7 +13,7 @@
   min-height: 93vh;
   display: flex;
   align-items: center;
-  background-image: url("../../background.jpg");
+  background-image: url("../../background.webp");
   background-position: center;
   background-size: cover;
 }
