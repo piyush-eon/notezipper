@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Container,
   Form,
@@ -20,6 +20,8 @@ function Header({ setSearch }) {
   const logoutHandler = () => {
     dispatch(logout());
   };
+
+  useEffect(() => {}, [userInfo]);
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">

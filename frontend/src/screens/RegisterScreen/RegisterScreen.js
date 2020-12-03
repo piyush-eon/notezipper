@@ -24,17 +24,17 @@ function RegisterScreen({ history }) {
   const userRegister = useSelector((state) => state.userRegister);
   const { loading, error, userInfo } = userRegister;
 
-  const postDetails = () => {
+  const postDetails = (pics) => {
     if (
-      pic ===
+      pics ===
       "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
     ) {
       return setPicMessage("Please Select an Image");
     }
     setPicMessage(null);
-    if (pic.type === "image/jpeg" || pic.type === "image/png") {
+    if (pics.type === "image/jpeg" || pics.type === "image/png") {
       const data = new FormData();
-      data.append("file", pic);
+      data.append("file", pics);
       data.append("upload_preset", "notezipper");
       data.append("cloud_name", "piyushproj");
       fetch("https://api.cloudinary.com/v1_1/piyushproj/image/upload", {
@@ -61,8 +61,6 @@ function RegisterScreen({ history }) {
 
   const submitHandler = (e) => {
     e.preventDefault();
-
-    postDetails();
 
     if (password !== confirmpassword) {
       setMessage("Passwords do not match");
@@ -122,7 +120,7 @@ function RegisterScreen({ history }) {
           <Form.Group controlId="pic">
             <Form.Label>Profile Picture</Form.Label>
             <Form.File
-              onChange={(e) => setPic(e.target.files[0])}
+              onChange={(e) => postDetails(e.target.files[0])}
               id="custom-file"
               type="image/png"
               label="Upload Profile Picture"
