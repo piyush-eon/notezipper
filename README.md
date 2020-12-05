@@ -42,10 +42,10 @@ You can register a new account or login with an existing one.
 
 ## Built with 
 
-- [React JS](http://www.w3schools.com/jquery/jquery_ref_ajax.asp)
-- [Node JS](https://developers.google.com/chart/interactive/docs/quick_start) 
-- [Express JS](http://getbootstrap.com/)
-- [Mongo DB](http://getbootstrap.com/)
+- [React JS](https://reactjs.org/)
+- [Node JS](https://nodejs.org/) 
+- [Express JS](https://expressjs.com/)
+- [Mongo DB](https://www.mongodb.com/)
 - [Bootstrap](http://getbootstrap.com/)
 
 ## Team
