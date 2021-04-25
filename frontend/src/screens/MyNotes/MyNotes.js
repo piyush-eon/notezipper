@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Button, Card } from "react-bootstrap";
+import { Badge, Button, Card } from "react-bootstrap";
 import MainScreen from "../../components/MainScreen";
-import "./noteStyles.css";
 import { Link } from "react-router-dom";
 import NoteModal from "../../components/NoteModal";
+import ReactMarkdown from "react-markdown";
 
 import { useDispatch, useSelector } from "react-redux";
 import { deleteNoteAction, listNotes } from "../../actions/notesActions";
@@ -99,6 +99,7 @@ function MyNotes({ history, search }) {
                 >
                   {note.title}
                 </span>
+
                 <div>
                   <Button href={`/note/${note._id}`}>Edit</Button>
                   <Button
@@ -111,8 +112,11 @@ function MyNotes({ history, search }) {
                 </div>
               </Card.Header>
               <Card.Body>
+                <h4>
+                  <Badge variant="success">Category - {note.category}</Badge>
+                </h4>
                 <blockquote className="blockquote mb-0">
-                  <p>{note.content}</p>
+                  <ReactMarkdown>{note.content}</ReactMarkdown>
                   <footer className="blockquote-footer">
                     Created on{" "}
                     <cite title="Source Title">

@@ -19,6 +19,7 @@ app.use(express.json()); // to accept json data
 app.use("/api/notes", noteRoutes);
 app.use("/api/users", userRoutes);
 
+// --------------------------deployment------------------------------
 const __dirname = path.resolve();
 
 if (process.env.NODE_ENV === "production") {
@@ -32,6 +33,7 @@ if (process.env.NODE_ENV === "production") {
     res.send("API is running..");
   });
 }
+// --------------------------deployment------------------------------
 
 // Error Handling middlewares
 app.use(notFound);

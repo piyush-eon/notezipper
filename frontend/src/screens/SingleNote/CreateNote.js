@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import MainScreen from "../../components/MainScreen";
-import "./SingleNote.css";
 import { Button, Card, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { createNoteAction } from "../../actions/notesActions";
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
+import ReactMarkdown from "react-markdown";
 
 function CreateNote({ history }) {
   const [title, setTitle] = useState("");
@@ -63,6 +63,14 @@ function CreateNote({ history }) {
                 onChange={(e) => setContent(e.target.value)}
               />
             </Form.Group>
+            {content && (
+              <Card>
+                <Card.Header>Note Preview</Card.Header>
+                <Card.Body>
+                  <ReactMarkdown>{content}</ReactMarkdown>
+                </Card.Body>
+              </Card>
+            )}
 
             <Form.Group controlId="content">
               <Form.Label>Category</Form.Label>

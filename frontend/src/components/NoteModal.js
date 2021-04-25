@@ -1,4 +1,5 @@
 import { Button, Modal } from "react-bootstrap";
+import ReactMarkdown from "react-markdown";
 
 function NoteModal({ show, noteModal, onHide }) {
   return (
@@ -15,7 +16,7 @@ function NoteModal({ show, noteModal, onHide }) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <p>{noteModal.content}</p>
+        <ReactMarkdown>{noteModal.content}</ReactMarkdown>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={onHide}>Close</Button>
