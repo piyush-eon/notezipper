@@ -39,7 +39,6 @@ function Header({ setSearch }) {
                   className="mr-sm-2"
                   onChange={(e) => setSearch(e.target.value)}
                 />
-                {/* <Button variant="secondary">Search</Button> */}
               </Form>
             )}
           </Nav>

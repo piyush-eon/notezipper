@@ -10,7 +10,6 @@ function MainScreen({ children, title }) {
           <div className="page">
             {title && (
               <>
-                {" "}
                 <h1 className="heading">{title}</h1>
                 <hr />
               </>

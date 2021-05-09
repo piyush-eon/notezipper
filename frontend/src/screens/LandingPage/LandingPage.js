@@ -18,7 +18,7 @@ function LandingPage({ history }) {
     <div className="main">
       <Container>
         <Row>
-          <div className=" intro-text">
+          <div className="intro-text">
             <div>
               <h1 className="title">
                 Welcome to Note Zipper

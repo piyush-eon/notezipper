@@ -28,7 +28,7 @@ function App() {
           )}
         />
         <Route path="/note/:id" component={SingleNote} />
-        <Route path="/createnote" component={CreateNote} />
+        <Route path="/createnote" component={CreateNote} />;
         <Route path="/profile" component={ProfileScreen} />
       </main>
       <Footer />
