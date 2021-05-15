@@ -21,7 +21,11 @@
   margin-top: 50px;
   display: flex;
   justify-content: space-evenly;
-  /* background-color: aqua; */
+}
+
+.landingbutton {
+  width: 200px;
+  height: 55px;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -31,11 +35,6 @@
   .title {
     padding: 0 100px;
   }
-}
-
-.landingbutton {
-  width: 200px;
-  height: 55px;
 }
 
 @media only screen and (max-width: 768px) {

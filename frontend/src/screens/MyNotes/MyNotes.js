@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { Accordion, Badge, Button, Card } from "react-bootstrap";
 import MainScreen from "../../components/MainScreen";
 import { Link } from "react-router-dom";
-// import NoteModal from "../../components/NoteModal";
 import ReactMarkdown from "react-markdown";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -11,9 +10,6 @@ import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
 
 function MyNotes({ history, search }) {
-  // const [noteModal, setNoteModal] = useState("");
-  // const [modalShow, setModalShow] = useState(false);
-
   const dispatch = useDispatch();
 
   const noteList = useSelector((state) => state.noteList);
@@ -52,11 +48,6 @@ function MyNotes({ history, search }) {
     successCreate,
     successUpdate,
   ]);
-
-  // const ModelShow = (note) => {
-  //   setModalShow(true);
-  //   setNoteModal(note);
-  // };
 
   const deleteHandler = (id) => {
     if (window.confirm("Are you sure?")) {
@@ -140,11 +131,6 @@ function MyNotes({ history, search }) {
               </Card>
             </Accordion>
           ))}
-      {/* <NoteModal
-        show={modalShow}
-        noteModal={noteModal}
-        onHide={() => setModalShow(false)}
-      /> */}
     </MainScreen>
   );
 }

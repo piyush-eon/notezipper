@@ -20,10 +20,7 @@ function LandingPage({ history }) {
         <Row>
           <div className="intro-text">
             <div>
-              <h1 className="title">
-                Welcome to Note Zipper
-                <span></span>
-              </h1>
+              <h1 className="title">Welcome to Note Zipper</h1>
               <p className="subtitle">One Safe place for all your notes.</p>
             </div>
             <div className="buttonContainer">
